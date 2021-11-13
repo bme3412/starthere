@@ -1,8 +1,9 @@
 
+
 <!DOCTYPE html>
 <html>  
   <head>
-    <title>Brendan - About</title>
+    <title>Brendan - How I got here</title>
     <meta charset="utf-8">
     <meta name="keywords" content>
     <meta name="author" content="Brendan Erhard">
@@ -39,43 +40,63 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css" type="text/css">
     <link rel="stylesheet" href="/css/main.css" type="text/css">
-    <link rel="stylesheet" href="css/ie10.css" type="text/css"> 
+    <link rel="stylesheet" href="/css/ie10.css" type="text/css"> 
     
   </head>
   
   <body>
    <div class="container">
     <nav>
-      <a href="/html/index.html" id="branding">Brendan</a>
-      <a href="/html/about.html" class="active">About</a>
-      <a href="/html/mystory.html">My Story</a> 
-      <a href="/html/work.html">Work</a> 
-      <a href="/html/fun.html">When Not Working</a>  
+        <a href="/html/index.html" id="branding">Brendan</a>
+        <a href="/html/about.html" >About</a>
+        <a href="/html/mystory.html"class="active">My Story</a> 
+        <a href="/html/work.html" >Work</a> 
+        <a href="/html/fun.html">When Not Working</a>   
     </nav>
     
-    <h2>About Me</h2>
-    <p>Hi, I’m Brendan. <br>I'm a tech investor who fell in love with programming; I want to use programming to become a better investor. <br> <br> I started from scratch and learned html/css and some javascript to make this website, with the goal of demonstrating my interest in using intensive python-driven data analysis to recommend actionable and decisive investment outcomes.</p>
+    <h1>Pandas</h1>
+    <h4>Loading files and changing display options</h4>
+    <p></p>
     <figure>
-      <figcaption>Suggested listening: Kool & The Gang, 'Summer Madness'</figcaption>
-      <audio
-          controls
-          src="/img/summer.mp3">
-              Your browser does not support the
-              <code>audio</code> element.
-      </audio>
-  </figure>
-    
+        <img src="/img/load_csv.png" srcset=""alt="load-csv">
+        <figcaption>Using pandas to read in a csv file of IMDB movie data and changing view options</figcaption>
+      </figure>
+    <hr class="dashed">
+    <h4>Identifying and dropping null values</h4>
+    <p></p>
     <figure>
-      <img src="/img/me.jpg" srcset=""alt="the author's profile picture">
-      <figcaption>Probably the only time I will be wearing a suit on a boat @ Cotuit, Massachusetts</figcaption>
+      <img src="/img/null_sum.png" srcset=""alt="null-sum">
+      <figcaption>Identifying and counting all n/a values by feature</figcaption>
     </figure>
-    <p>Previously at <a href="https://www.bc.edu/" target="_blank">Boston College</a>, <a href="https://www.sciencespo.fr/en" target="_blank">Sciences Po</a>, currently at a large global asset management firm</a>.
-    <br><br>Also an <span><a href="https://www.goodreads.com/user/year_in_books/2021/21888346" target="_blank"> avid reader</a></span>, <span><a href="https://www.strava.com/athletes/24468767" target="_blank"> a nostalgic athlete</a></span>, <span></span><a href="https://github.com/bme3412" target="_blank"> a daily githubber</a></span>, and a <span><a href="/html/fun.html" target="_blank"> global traveller.</a></span><br>Proud autodidact; always <span><a href="https://www.datacamp.com/profile/brendanerhard" target="_blank"> learning</a></span>, always <span><a href="https://www.udemy.com/user/brendan-erhard/" target="_blank"></span</a>improving.</a></span><br>Chasing that <span><a href="/img/pierce.jpeg" target="_blank"> farewell tour.</a></span>
-      
-    </p>
-    
-    <div class="cta" style="margin-bottom: 0;"><a class="btn" href="/img/BrendanErhardresume 9.2021.pdf" target="_blank">Download my Resume</a></div>
-   
+    <figure>
+      <img src="/img/drop_na.png" srcset=""alt="drop_na">
+      <figcaption>Dropping nulls based on conditional null values</figcaption>
+    </figure>
+    <hr class="dashed">
+    <br><h4>Formatting integers/floats in DataFrames through method-chaining</h4>
+    <p></p>
+    <hr class="dashed">
+    <br><h4>Using a for loop to fill null values with the median values</h4>
+    <p></p>
+    <figure>
+      <img src="/img/null_for_loop.png" srcset=""alt="null-forloop">
+      <figcaption>Replacing null values with median values</figcaption>
+    </figure>
+    <hr class="dashed">
+    <br><h4>Q Cut and percentiles/quantiles</h4>
+    <p></p>
+    <figure>
+      <img src="#" srcset=""alt="qcut">
+      <figcaption>using q cut for percentiles</figcaption>
+    </figure>
+    <hr class="dashed">
+    <br><h4>Filtering DataFrames based on multiple conditions</h4>
+    <p></p>
+    <figure>
+      <img src="#" srcset=""alt="filter">
+      <figcaption>Filtering DataFrames by multiple conditionals</figcaption>
+    </figure>
+
     <footer>
       <hr/>
       <div class="contact">
@@ -91,7 +112,6 @@
         <a href="https://github.com/bme3412" target="_blank">
           <i title="github" class="fab fa-github fa-lg social"></i>
         </a>
-      </div>
       <p>Made by BME, ©2021</p>
     </footer>
     
@@ -101,3 +121,8 @@
   </body>
   
 </html>
+
+
+
+
+
