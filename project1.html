@@ -1,0 +1,273 @@
+
+<!DOCTYPE html>
+<html>  
+  <head>
+    <title>Brendan becomes Pythonic</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content>
+    <meta name="author" content="Brendan Erhard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <!--[if IE]>
+      <style>
+        <link rel="stylesheet" type="text/css" href="css/ie9.css"/>
+      </style>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118173659-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118173659-1');
+    </script>
+    <!--favi-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!--font awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--my CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/ie10.css" type="text/css"> 
+    
+  </head>
+  
+  <body>
+   <div class="container">
+    <nav>
+      <a href="/html/index.html" id="branding">Brendan</a>
+      <a href="/html/about.html">About</a>
+      <a href="/html/mystory.html">My Story</a> 
+      <a href="/html/work.html">Work</a> 
+      <a href="/html/fun.html">When Not Working</a>  
+    </nav>
+    <br>
+    <h2>How many Python files did I create in order to become Pythonic?</h2>
+    <h3>Answer: 286 Jupyter files pre-COVID, 263 files post-COVID; 119 Visual Studio Python files pre-COVID, 181 Python files post-COVID</h3>
+    <p>Context: The first time it sunk in for me that COVID-19 was more than something trivial was the night of March 11, 2020 and it all occured in a span of about 35 minutes. Obviously I was aware of the virus - rising uncertainty about the contagion had ended the 11-year bull market run, with stocks down over 20% from prior peaks in February. Like any other evening on the 11th, a Wednesday, I was watching baskeball before heading to bed. Shortly after 9:00 PM, actor Tom Hanks took to social media that he and his wife had tested positive for the virus. </p>
+    <p>Then, at 9:27 PM, hyper-vigilant NBA reporter and twitter fiend Shams Charania <span><a href="https://twitter.com/ShamsCharania/status/1237913057596026881?ref_src=twsrc%5Etfw%7Ctwcamp%5Etweetembed%7Ctwterm%5E1237913057596026881%7Ctwgr%5E%7Ctwcon%5Es1_&ref_url=https%3A%2F%2Fwww.nbcsports.com%2Fnorthwest%2Fportland-trail-blazers%2Fnba-suspends-season-indefinitely-after-rudy-gobert-tests-positive-covid-19" target="_blank"> reported </a></span>
+    that Utah Jazz player Rudy Gobert had tested positive for the virus. (Earlier in the day, as part of a pre-game media session, Gobert had mocked the at-the-time hyperbole of the virus and touched all open microphones at the podium with his massive hands). Charania followed up minutes later with another <span><a href="https://twitter.com/shamscharania/status/1237914142033444864?lang=en" target="_blank"> tweet</a></span>, reporting that the NBA season had been indefinitely suspended. The sequence of events - Tom Hanks, Rudy Gobert with the red breaking news banner on ESPN.com, shortly followed by the NBA season suspended, all in a span of 32 minutes and which I followed in real time - sounded alarm bells in my head. </p>
+    <p>And then we all stayed home, and in my free time, over countless hours on learning platforms such as udemy and Datacamp; hundreds of videos watched on YouTube; and intensive practice writing code for projects, I learned python.</p>
+    <p>Twenty years after 9/11, and 548 days after I began my intensive python learning binge, I was curious to know how much time I had spent using and learning python during the pandemic, and I knew the exact tool to help me do it: python.</p>
+    <p>Below is a visualization of all the python files I created and the date the file was created. The two data sets refer to Jupyer Notebook files (".ipynb.") and those created on Visual Studio Code (".py"). The complete code can be accessed at this link <span><a href="https://nbviewer.jupyter.org/github/bme3412/Python/blob/main/Projects/The%20Journey.ipynb" target="_blank"> here</a></span>, but below I have replicated the most important parts of the code. </p>
+    <figure>
+        <img src="/img/python_files.png" srcset=""alt="python-graph">
+        <figcaption>A look at my journey through the wonderful world of python</figcaption>
+      </figure>
+    <p>So if the question is "how many python files did I create starting on March 12, 2020", then here is my thought process: first, that I have to identify, count, and sum up files created both on Jupyter Notebooks, and Visual Studio Code, and I also want to save the date the file was created to meet the question's parameters. I need to be able to search for all files in all folders and subfolders that end in a defined suffix, and I need to collect all relevant data points and present in tabular format. After assessing the quality of the data and identifying reasons for outliers, I need to visualize and present the data in a conclusive and evident format. Only then can I start to propose answers to questions.
+    </p>
+    <h3>Initial look at the data set:</h3>
+    <p>I start by importing all packages and libraries:</p>
+    <figure>
+      <img src="/img/import.png" srcset=""alt="import packages">
+      <figcaption>Import packages</figcaption>
+    </figure>
+    <p>And then I locate the proper file directory:</p>
+    <figure>
+      <img src="/img/directory.png" srcset=""alt="directory">
+      <figcaption>Locate files</figcaption>
+    </figure>
+    <p>Then I write a function using os and pathlib to iterate over all files and create a list of all files in all subfolders in all directories in the root: </p>
+    <figure>
+      <img src="/img/function.png" srcset=""alt="function">
+      <figcaption>write a function</figcaption>
+    </figure>
+    <p>Next, I create a dictionary for each specific file type: </p>
+    <figure>
+      <img src="/img/dictionary.png" srcset=""alt="dictionary">
+      <figcaption>Create file type dictionary</figcaption>
+    </figure>
+    <p>Then I write a function that filters all files and saves as a dataframe: </p>
+    <figure>
+      <img src="/img/dataframe.png" srcset=""alt="directory">
+      <figcaption>Save files to dataframe</figcaption>
+    </figure>
+    <p>After running the function and renaming data attributes, I use the '.shape' method. The inital file count across the root directory is 15,475. </p>
+    <figure>
+      <img src="/img/raw_filedf.png" srcset=""alt="raw file">
+      <figcaption>Raw DataFrame</figcaption>
+    </figure>
+    <p>Then I use the built-in value counts function for a high level view of the files list by date and file type. And I take note of the outliers. Immediately, the 5,449 files created exactly 2 years and 1 hour before my birth stick out as noisy data but requires further analysis. </p>
+    <figure>
+      <img src="/img/value_counts.png" srcset=""alt="value counts">
+      <figcaption>30,000 foot view of the file list, saved as 'raw_df' DataFrame</figcaption>
+    </figure>
+
+    <h3>A more detailed look at the data, and identifying reasons for outliers:</h3>
+    <p>First, as part of an effort to refine and clean the data, I need to differentiate between those files accessed on Jupyer Network from those accessed on Visual Studio Code, as the filepaths are different for each source. I effectively need to split the data into 3 buckets: Python files that end in '.py', which indicates Visual Studio Code; Python files that end in '.ipynb', which indicates the file was created on Jupyter Notebook; and all other system files. Below is code used to reclassify certain file names as either 'Python file' or 'Jupyter Notebook', based on the filepath.</p>
+    <figure>
+      <img src="/img/rename_python_files.png" srcset=""alt="rename-python-files">
+      <figcaption>Cleaning up the data set by renaming files types</figcaption>
+    </figure>
+    <p>Note that we still have the same total # of files as before at ~15,475: </p>
+    <figure>
+      <img src="/img/renamed-count.png" srcset=""alt="renamed-count">
+      <figcaption>Cleaning up the data set</figcaption>
+    </figure>
+    
+    <p>But now I need to investigate the outliers and why certain dates have hundreds of files saved to my system. I'll need to further investigate files uploaded on 10/26/1985; 8/26/2018; 9/21/2019; and 8/10/2018, among others. The next step is to subset the raw_df by file type ('Python File') and by the suspect dates. </p>
+    <h5>October 26, 1985 -- 147 python files excluded from dataset</h5>
+    <p>I subset the raw_df which contains all files and I filter for python files (".py" and ".ipynb") and those that match the date of "10/26/1985 :: 08:15:00". The result of matching this criteria is a dataframe consisting of 147 entries and 5 columns. Analysis of the files indicate these python files are interdependencies related to the development of the python language, and not files I created.</p>
+    <figure>
+      <img src="/img/1026_filter.png" srcset=""alt="1026-filter">
+      <figcaption>The ".py" files created on 10/26/1985 at 8:15AM appear to be related to underlying interdependencies of the python programming infrastructure. This data is excluded from my analysis.</figcaption>
+    </figure>
+    <h5>August 10, 2018 -- 215 python files excluded from dataset</h5>
+    <p>I perform the same analysis for files created on August 10, 2018, which was around the time I first downloaded python packages. The result is a dataframe of 215 entries and 5 columns. Again, this was around the time I first downloaded Python, and an analysis of file names and filepaths leads me to beleive these file are interdependencies. So while crucial, they are excluded from the data. </p>
+    <figure>
+      <img src="/img/810_filter.png" srcset=""alt="810-filter">
+      <figcaption>The ".py" files created on 10/26/1985 at 8:15AM appear to be related to underlying interdependencies of the python programming infrastructure. This data is excluded from my analysis.</figcaption>
+    </figure>
+    <h5>August 26, 2018-- 0 Python files excluded from dataset</h5>
+    <p>Similar analysis is run for files created on August 26, 2018. As it turns out, no files created on this date were python files. This data is also excluded. </p>
+    <figure>
+      <img src="/img/826_filter.png" srcset=""alt="826-filter">
+      <figcaption>Empty dataframe subsets indicate no Python files created on this date</figcaption>
+    </figure>
+    <h5>September 21, 2019 -- 0 Python files excluded from dataset</h5>
+    <p>No files created on this date were python files. This data is also excluded.</p>
+    <figure>
+      <img src="/img/921_filter.png" srcset=""alt="921-filter">
+      <figcaption>Empty dataframe subsets indicate no Python files created on this date</figcaption>
+    </figure>
+    <h4>Refine the dataset by filtering outliers and subsetting for python files only</h4>
+    <p>Finally, after removing outliers and subsetting for only python files, I am left with 938 ".py" files and 548 ".ipynb" files.</p>
+    
+    <figure>
+      <img src="/img/total_filtered.png" srcset=""alt="total-filter">
+      <figcaption>The refined dataset includes 938 Visual Studio code files and 548 Jupyter Notebook files</figcaption>
+    </figure> 
+    <p>Now that the dataset is identified, in order to answer the data sets from a time-series analysis perspective, I need to change the data type of the 'Date' variable in order to allow for sorting. But first I further segment the dataset by creating specifc dataframes for each of Jupyter Notebook and Visual Studio. So I copy the dataframes and apply panda's 'to_datatime' function for the Date columns. Note that the file count remains consistent.</p>
+    <figure>
+      <img src="/img/dates_df.png" srcset=""alt="date-df">
+      <figcaption>The "Date" variable in each dataframe needs to be converted to datetime</figcaption>
+    </figure> 
+    <p>Now I subset the dataframe further so that it incldues only the variables 'File', 'File Type', and 'Date. Then for each dataframe, I use 'sort_values' to first sort by chronological order, then I change the dataframe index to the datetime column.</p>
+    <figure>
+      <img src="/img/df_dates_chron.png" srcset=""alt="df-dates-chron">
+      <figcaption>Sort by dates</figcaption>
+    </figure> 
+    <figure>
+      <img src="/img/date-index2.png" srcset=""alt="date-index">
+      <figcaption>Reset the dataframe index to "Date"</figcaption>
+    </figure> 
+    <p>Then, I reformat the "Date" format to read in 'month/day/Year' format, and use value_counts again to find the # of files for each unique date, which I convert to a new dataframe. For each new dataframe, I also sort by date, and rename the labels for the data.</p>
+    <p></p>
+    <figure>
+      <img src="/img/df_output.png" srcset=""alt="df-output">
+      <figcaption>Reset the dataframe index to "Date"</figcaption>
+    </figure> 
+    <p>Finally, a preview of the data which will be used for visualization.</p>
+    <figure>
+      <img src="/img/data_to_viz.png" srcset=""alt="data-to-viz">
+      <figcaption>A final look at the data before it is visualized</figcaption>
+    </figure> 
+    <p>Finally, I plot each dataframe using matplotlib. See below for initial visualizations.</p>
+    <h3>Visualizing the data - a first look</h3>
+    <figure>
+      <img src="/img/graph_code.png" srcset=""alt="graph-code">
+      <figcaption>Visualizing the dataframes</figcaption>
+    </figure> 
+    
+    <figure>
+      <img src="/img/jupyter_graph.png" srcset=""alt="jupyter-graph">
+      <figcaption>Initial visualization: Jupyter files</figcaption>
+    </figure> 
+    <figure>
+      <img src="/img/vs_graph.png" srcset=""alt="vs-graph">
+      <figcaption>Initial visualization: VS Code files</figcaption>
+    </figure> 
+    <p>Now combine both plots together:</p>
+    <figure>
+      <img src="/img/python_graph.png" srcset=""alt="python-graph">
+      <figcaption>Initial visualization: Python files</figcaption>
+    </figure> 
+    <h3>How many python files did I upload pre-COVID (3/12/2020), and during the pandemic?</h3>
+    <p>With the dataset identified, now the analysis can start. First, I start by sorting each dataset by date. I use 3/12/2020 as the threshhold for the onset of the pandemic. The code below shows conditional dataframe subsetting, and the '.shape' function counts the unique dates on which python files were uploaded. So the output shows that I saved and updated files featuring Visual Studio Code programming files on 12 unique days prior to 3/12/2020 and 38 unique days after this date; while I uploaded files using Jupyter Notebook on 48 days prior to 3/12/2020 and 71 unique days after 3/12/2020.</p>
+    <figure>
+      <img src="/img/python_files_date.png" srcset=""alt="python-files-date">
+      <figcaption>Sorting dataframe by date</figcaption>
+    </figure> 
+    <p>Next, I need to sum the # of files for each of the 4 dataframes I have subsetted (1 each for pre- and post- 3/12/2020, for Jupyter Notebook and VS Code). Below I show the result: </p>
+    <figure>
+      <img src="/img/sum_files_covid.png" srcset=""alt="sum_files_covid">
+      <figcaption>Sum of the files uploaded across each of the 4 dataframes</figcaption>
+    </figure>
+    <h3>Now, I am really curious to know if there was a correlated effect of  coronavirus cases and # of python files uploaded --  so now I introduce a new data set</h3>
+    <p>See below a dataset for new coronavirus cases, sourced from ...</p>
+    
+    <h3>Overlay of coronavirus data</h3>
+    <figure>
+      <img src="/img/python_covid_code.png" srcset=""alt="python-covid-code">
+      <figcaption>Code for plotting python files created vs new COVID cases in the United States</figcaption>
+    </figure>
+
+    <figure>
+      <img src="/img/python_covid.png" srcset=""alt="python-covid">
+      <figcaption>Plotting python files created vs new COVID cases in the United States</figcaption>
+    </figure>
+
+    <h3>How many lines of code total?</h3>
+    <p>The preliminary answer is: 99,260 lines of python code across Jupyter Notebook files (an average of ~181 lines of code per file); and 162,425 lines of code across VS Code files (an average of 297 lines of code per file). See below: </p>
+    <figure>
+      <img src="/img/lines_of_code.png" srcset=""alt="lines-of-code">
+      <figcaption>Total lines of code across Python files</figcaption>
+    </figure>
+
+    <h3>How many words did I write?</h3>
+    <p>The preliminary answer is: 95,430 words across Jupyter Notebook files (an average of ~174 words per file); and 158,890 words across VS Code files (coincidentally, an average of ~173 words per file). Note the difference in words and line per file across Jupyter Notebook and VS Code, which can be explained by the differences in formatting and interface between the files. Jupyter Notebook only counts executed cells as a line, while VS Code, lines are often skipped for formatting purposes and to make the code easier to read. See below: </p>
+    <figure>
+      <img src="/img/words_of_code.png" srcset=""alt="words-of-code">
+      <figcaption>Total words of code across Python files</figcaption>
+    </figure>
+    <h3>How much time spent coding out of 10k hours?</h3>
+    <h3>run prediction for when to hit 10,000 hours, and how many lines of code</h3>
+    <h3>What days and times of day was I most active?</h3>
+    <p>I was a weekend warrior.</p>
+    <figure>
+      <img src="/img/jupyter_days.png" srcset=""alt="jupyter-days">
+      <figcaption>Weekend warrior - Jupyter Notebook</figcaption>
+    </figure>
+    <figure>
+      <img src="/img/vs_days.png" srcset=""alt="vs-days">
+      <figcaption>Weekend warrior - VS Code</figcaption>
+    </figure>
+
+
+
+    <footer>
+      <hr/>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/brendan-erhard/" target="_blank">
+          <i title="linkedin" class="fab fa-linkedin-in fa-lg social"></i>
+        </a>
+        <a href="mailto:erhardbr@gmail.com" target="_top">
+          <i title="email" class="far fa-envelope fa-lg social"></i>
+        </a>
+        <a href="https://twitter.com/bme3414" target="_top">
+          <i title="twitter" class="fab fa-twitter fa-lg social"></i>
+        </a>
+        <a href="https://github.com/bme3412" target="_blank">
+          <i title="github" class="fab fa-github fa-lg social"></i>
+        </a>
+      </div>
+      <p>Made by BME, ©2021</p>
+    </footer>
+    
+   </div>
+   
+    <script src="/js/script.js"></script>
+  </body>
+  
+</html>

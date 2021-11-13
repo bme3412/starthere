@@ -1,0 +1,216 @@
+
+<!DOCTYPE html>
+<html>  
+  <head>
+    <title>Brendan - I love the NBA</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content>
+    <meta name="author" content="Brendan Erhard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <!--[if IE]>
+      <style>
+        <link rel="stylesheet" type="text/css" href="css/ie9.css"/>
+      </style>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118173659-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118173659-1');
+    </script>
+    <!--favi-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!--font awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--my CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/ie10.css" type="text/css"> 
+    
+  </head>
+  
+  <body>
+   <div class="container">
+    <nav>
+      <a href="/html/index.html" id="branding">Brendan</a>
+      <a href="/html/about.html" >About</a>
+      <a href="/html/mystory.html">My Story</a> 
+      <a href="/html/work.html">Work</a> 
+      <a href="/html/fun.html">When Not Working</a>  
+    </nav>
+    <h2>Rebounds and Rings: Thoughts and observations (a rant?) from 20 years as an NBA fanatic - with assistance from BeautifulSoup, Pandas and MatplotLib</h2>
+    <p>I love basketball and I love the NBA. I think what I like most about the league is the competitive meritocracy where a player from virtually anywhere can succeed as long as he can play -- it is a make or miss league. Case in point, for the first 18 years of his life, Giannis Antetokounmpo, who was born in Greece the son of Nigerian parents, grew up poor, sometimes homeless, and effectively stateless due to Greek nationality laws concerning how he came to Greece. Now at the age of 26, Giannis, who stands 6'11" with a 7 foot wing span, is a 2-time MVP, perennial All-Star and most recently he scored 50 points in the deciding game to clinch the championship for the 2021 season. Amazing - all he needed was a ball and a hoop. 
+    For the past 20 years I have devoured the NBA and watched most Boston Celtics games over the time period (20 seasons at 82 games per season is 1,640 games), and even purchased season's tickets for the 2013-2015 Celtics seasons (43 home games per season). So yes, I love basketball. Python proved extremely useful for analyzing how the league has changed since 2000 when I watched my first Celtics game on tv.</p>
+    <p>Before diving in you should know that much of the ranking analysis relies on using the Game Score metric, which is derived to standardize across all games, and provides a single measurement of a player's productivity for a single game. The metric is standardized such that a total of 40 points would be considered an outstanding performance, whereas 10 points is an average performance. **The formula for Game Score is: 'PTS + 0.4 * FG - 0.7 * FGA - 0.4*(FTA - FT) + 0.7 * ORB + 0.3 * DRB + STL + 0.7 * AST + 0.7 * BLK - 0.4 * PF - TOV'. </p>
+    <figure>
+      <img src="/img/Game_score_scatter.png" srcset=""alt="game-score-scatter">
+      <figcaption>Player game scores for all games played since 2000 (n=230,326); the increased importance of the 3 point shot, as indicated by red, is apparent in what can only be reffered to as the "Steph Curry effect" </figcaption>
+    </figure>
+    <h4>See below for scorching hot takes: </h4>
+    <ol>
+      
+      <li>The best individual game during the past 20 years came from Kobe Bryant (Rest in Peace) in the 2006 season, when he scored 81 points, the 2nd highest in league history, to beat the Toronto Raptors. The next best game was a 60 point triple-double by James Harden, followed by a 70 point game by Devin Booker (the 3rd most points in a single game of all time). </li>
+      <figure>
+        <img src="/img/top_5.png" srcset=""alt="top-5-games">
+        <figcaption>The top 5 individual efforts since 2000 </figcaption>
+      </figure>
+      <li>The best player over the time period spanning from 2000-2021, purely looking at statistics and excluding the postseason, was LeBron James, followed next by Kevin Durant and then James Harden.</li>
+      <li>The influx of international talent is undeniable and the game is the better for it. 389 players from 22 different countries played during the 2000 NBA season; 91.5% of these players were American. Flash forward to 2020, where 607 total players (roster sizes expanded) from 46 different countries played a game, and 77.1% of these players were American. For the past 3 seasons, the league MVP has also been European, with Denver's Nikola Jokic the reigning MVP with Giannis Antetokounmpo having won back to back MVP awards starting in 2019. He also unanimously won the 2021 Finals MVP. </li>
+      <li>To be the top player in the NBA for a given season, a player would have to average a minimum of 24 points, 6 rebounds and 4 assists. Out of the total 230,326 statlines over the prior 20 years, this has occured 4,239 times, or 1.8% of all games played. Out of all of the best players since 2000, Kevin Garnett averaged the lowest points per game, at 24.2, but he also averaged 14 rebounds with 5 assists and 2 blocks, which has occured 261 times, or 0.1% of all games played. Kevin Garnett was MVP in 2004. </li>
+      <li>The most unique statline (n=230,320) of the past 20 years was recorded by Draymond Green of the Golden State Warriors. On February 10, 2017 in a game against Memphis, he pulled down 11 rebounds while dishing out 10 assists with 10 steals and 5 blocks... and 4 points. This was the first "triple-double" (when a player records double digit values in 3 statistical categories for a single game) in NBA history without scoring double-digits in points. He shot the ball 6 times, but ended up with a +/- score of 26. For reference, out of a total of 230,326 individual games played over the past 20 years, there has been a total of 1,090 triple-doubles (a 0.5% occurence). Based on this empirical data, the odds of tallying a triple double without points is 0.0005%. It was a once in a generation game. </li>
+      <li>Throughout his 19 year (and counting) career, LeBron James has averaged 27 points, 7 rebounds and 7 assists for each game. Yet across the 1,305 regular season games he has played, he has never had an individual game with 27 points, 7 rebounds and 7 assists. Amazing. This is corroborated by a SQL query which returns null values. </li>
+      
+      <figure>
+        <img src="/img/Lebron_avg.png" srcset=""alt="lebron-average">
+        <figcaption>A SQL search for 27 points, 7 rebounds and 7 assists results in no records</figcaption>
+      </figure>
+      <li>The increased importance of the 3-point shot, in what can only be termed the 'Steph Curry effect', is undeniable. </li><br>
+    </ol>
+    <br>
+    <hr class="dashed">
+    <br>
+    <h2>Random Thought 1: Top 25 players of the past 20 years: </h2>
+    <p>Methodology: From the original dataset (n=230,326), I used the groupby function to group by player, then averaged each statistical category to arrive at career average stats, and finally ranked by highest Game_Score average. </p>
+    <br>
+    <figure>
+      <img src="/img/NBA_top_25.png" srcset=""alt="nba-top25">
+      <figcaption>Top 25 NBA players since the 2000 season: player per game metrics are quantiled, then sorted by GAME_SCORE</figcaption>
+    </figure>
+    <p>Observations: Even the most glib fans would not be surprised at the top 2 players, both perennial all-stars and both headed to the Hall of Fame: Lebron James, and Kevin Durant. LeBron James played 1,305 games from 2000-2021, during which he averaged 27 points per game with 7 assists, 7 rebounds, 2 steals and 1 block per game. Kevin Durant, whom played 800 games, took less shots per game overall, but did shoot more efficiently (Durant was top 20-30% for 3P, FT and FG, while James was slightly lower) while averaging 27 points, 7 rebounds and 4 assists. Next on the list was James Harden, who took more shots (he averaged 8.9 3P shots per game, as compared to 5.1 for Durant and 4.4 for James). At 29.1 points per game over 661 games, he ranked as the highest per-game scorer (games > 300) during the trailing 20 years. </p>
+    <h4>Initial look at top 25 players, with metrics quantiled (1 = top 20%; 5 = bottom 20%): </h4>
+    <p>Methodology: To standardize across the dataset, I also ranked each value and then grouped into quantiles (where 1 = top 20% of the dataset and 5 = bottom 20% of the dataset). For the purpose of finding the best players, I filtered games played to > 300.</p>
+    <figure>
+      <img src="/img/NBA_top_25_ile.png" srcset=""alt="nba-top25-ile">
+      <figcaption>Avg per game metrics are quantiled, then sorted by GAME_SCORE</figcaption>
+    </figure>
+    <p>Observations: </p>
+    <h2>Random Thought 2: Top 25 individual seasons since 2000: </h2>
+    <p>Methodology: From the original dataset (n=230,326), I used the groupby function on Season, then averaged each statistical category to arrive at per season stats, and finally ranked by highest Game_Score average.</p>
+    <figure>
+      <img src="/img/NBA_top_25_seasons_by_year.png" srcset=""alt="nba-top25-seasons-year">
+      <figcaption>It's LeBron James' world and the rest of the NBA is living in it</figcaption>
+    </figure>
+    <p>Observations: </p>
+    <h2>Random Thought 3: The best player for each season, from 2000-2021 </h2>
+    <p>Observations: To be considered the best player per season, a player would have to average a minimum of 24 points per game, and pull down 6 rebounds while dishing out a minimum of 4 assists. Out of 230,326 player games played, this statline was achieved 4,239 times, or 1.8%. I should also point out the the best player per season averaged well north of 24 points per game, and that while Kevin Garnett did average the lowest points per game of the beast seasons of the past 20 years, he also averaged 14 rebounds, 5 assists and 2 blocks (in the 2004 season). Out of all games played since 2000, 261 players had games with > 24 points, > 14 rebounds and > 5 assists (0.1% of all games played). </p>
+    <figure>
+      <img src="/img/NBA_top__seasons_year_sort.png" srcset=""alt="best-each-season">
+      <figcaption>Regime changes across the NBA - who was the best player for each season?</figcaption>
+    </figure>
+    <h2>Random Thought 4: How many Triple-Doubles have been recorded since 2000?</h2>
+    <p>A 'triple double' in basketball is a statistical occurrence during which a player records >=10 in any three of the offensive statistical measures during a single game. As an example, the most common form of a triple-double is when an individual player tallies 10 or more points, 10 or more rebounds, and 10 or more assists for one game (the name refers to three stat categories in double digits). Some pundits regard it as a sign of basketball excellence, while others regard it as merely an outcome of stat-padding; the true meaning is likely somewhere in between. Triple-doubles historically have been rare, but have increased in prominence with the increased popularity of the three-point shot and increased pace of the game (higher ending game scores are indicative of more offensive possessions). </p>
+    <p>Since 2000, there has been a total of 1,090 triple-doubles tallied by NBA players. This includes 1,076 triple-doubles of the point-rebounds-assists variety, with 13 composed of point-rebounds-blocks, and 1 including rebounds, assists and steals. </p>
+    <figure>
+      <img src="/img/trip_dub_pra.png" srcset=""alt="trip-dub-pra">
+      <figcaption>Russell Westbrook is the clear leader among the top 25 players that posted triples-doubles since 2000</figcaption>
+    </figure>
+    <figure>
+      <img src="/img/trip_dub_prb.png" srcset=""alt="trip-dub-prb">
+      <figcaption>13 Point-Rebound-Block triple-doubles since 2000</figcaption>
+    </figure>
+    <p>Possibly the most unique stat-line in NBA history (or at least since 2000): on February 10, 2017, Draymond Green of the Golden State Warriors recorded the first triple-double in NBA history without scoring double-digits in points. </p>
+    <figure>
+      <img src="/img/draymond.png" srcset=""alt="draymond">
+      <figcaption>The first triple-double in NBA history that did not include 10 or more points scored</figcaption>
+    </figure>
+    <h4>Analysis using SQL:</h4> <br>
+    <br>
+    <figure>
+      <img src="/img/SQL_tripdoub.png" srcset=""alt="SQL_tripdub">
+      <figcaption>Using MySQL to identify triple-doubles </figcaption>
+    </figure>
+    <h2>Random Thought 5: Once considered a majority-American sport, basketball is played in all parts of the world and the NBA is increasingly globally diverse</h2>
+  
+    <p>The 1992 Olympics held in Barcelona, Spain marked the first time that American NBA players participated in the Olympics. And it showed, as the team, featuring Michael Jordan, Magic Johnson, Larry Bird and Charles Barkley, beat opponents by an average margin of 44 points on their way to taking home the gold medal. But the world has caught up since then, considerably, to the extent that the past 3 players awarded league MVP have been non-American.</p>
+    <p>As shown below, international players represented ~23% of NBA rosters for the 2021 season (American players were 77%), which has been a steady mix shift since 2000, when 9 out of 10 players were American. In the 2021 season, American players hailed from 46 different countries, which is more than double the amount of countries represented in the 2000 season.</p>
+    <figure>
+      <img src="/img/global_players.png" srcset=""alt="global-players">
+      <figcaption>The NBA has become increasingly globally diverse since 2000</figcaption>
+    </figure>
+    <br>
+    <figure>
+      <img src="/img/US_players.png" srcset=""alt="US-players">
+      <figcaption>Americans still make up the majority of the NBA, but the rest of the world is catching up</figcaption>
+    </figure>
+    <h2>Random Thought 6: The Steph Curry effect </h2>
+    <p></p><br>
+    <hr class="dashed">
+    <br>
+    <h2>Appendix: How did I get all the data? I created my own data set</h2>
+    <br>
+    <h4>First, I used an API, web scraping, and Pandas to get all game-logs from each player for each team since the 2000 season</h4>
+    <p>Much of my data collection relied on data from the  <span><a href="https://www.basketball-reference.com/" target="_blank"> excellent Basketball Reference website,</a></span>  which has compiled statistics for seemingly every NBA game and NBA player that has ever played (and even data on the defunct ABA league). Using a combo of web scraping and calling APIs, for each of the 30 franchises in the NBA, I created a Jupyter workbook that pulled in the game log (an individual player's stats during a game) of each player for each of the 82 games played since 2000. With 12 players per team, 82 games played per year, 30 teams and 20 seasons, this implies a total dataset of ~590,400 records (12*82*30*20), although there is likely statistical noise involved.</p>
+    <p>With the API, I used a while loop that pulled in gamelogs for each player for every game of each season since 2000. I organized the data processing with NBA season as the iterator, and saved each gamelog to a dataframe specific for a given season and given team. I then saved the output into csv format for easier data engineering and analysis. I organized my file structure to consist of 30 folders for 30 teams, each containing 21 csv files with dataframes of each player's gamelog for every game of a certain season.</p>
+    <figure>
+      <img src="/img/nba_folders.png" srcset=""alt="nba-folders">
+      <figcaption>File structure for organizing data for each team</figcaption>
+    </figure>
+    <figure>
+      <img src="/img/bos_csvs.png" srcset=""alt="bos-csv">
+      <figcaption>Each team folder holds 21 CSV files holding dataframes of each player's gamelog</figcaption>
+    </figure>
+    <p>Then for each team, I appended all dataframes into one master dataframe with all game logs for every player since the 2000 season. I then ranked by highest GAME_SCORE to rank the best individual games for each NBA team since 2000. </p>
+    <figure>
+      <img src="/img/BOS_df.png" srcset=""alt="bos-df">
+      <figcaption>Jayson Tatum's 60 point game ranks as the best individual game for the Boston Celtics since the 2000 season</figcaption>
+    </figure>
+    <p>I then appended all team dataframes to compile a master dataframe for each game log for each player on each team for each season since since 2000. I also ranked this by GAME_SCORE. </p>
+    <figure>
+      <img src="/img/NBA_df.png" srcset=""alt="nba-df">
+      <figcaption>Kobe Bryant tallied the best individual game of the past 20 years with his scintillating 81 point outburst against Toronto in 2006</figcaption>
+    </figure>
+    <br>
+    <h4>I also used web scraping and Pandas to pull in season stats for each player on each team since the 2000 season</h4>
+    <p>To rank players by year - need to get each individual game, and quantile all values that matter. Then find a moving average within each season, and then take an average-weight to quantile (histogram) for each season. Then do this for the entire time period, years 2000-2021. </p>
+    <h3>Appendix: Storing the data - enter MySQL </h3>
+    <p>Now that I have all the data for every game played by every NBA player since the 2000 season, I need a place to store the data. For this I rely upon SQL -- which I use with python for easier data manipulation.</p>
+    <figure>
+      <img src="/img/python_SQL.png" srcset=""alt="python-SQL">
+      <figcaption>API calling/web scraping --> python --> SQL. 230,236 data entries retrieved and processed in python, now in a MySQL table </figcaption>
+    </figure>
+    <figure>
+      <img src="/img/Kobe_SQL.png" srcset=""alt="kobe-SQL">
+      <figcaption>Box score data for every NBA player's every game played, since 2000 -- which allows for creative search queries</figcaption>
+    </figure>
+    
+    
+   
+    <footer>
+      <hr/>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/brendan-erhard/" target="_blank">
+          <i title="linkedin" class="fab fa-linkedin-in fa-lg social"></i>
+        </a>
+        <a href="mailto:erhardbr@gmail.com" target="_top">
+          <i title="email" class="far fa-envelope fa-lg social"></i>
+        </a>
+        <a href="https://twitter.com/bme3414" target="_top">
+          <i title="twitter" class="fab fa-twitter fa-lg social"></i>
+        </a>
+        <a href="https://github.com/bme3412" target="_blank">
+          <i title="github" class="fab fa-github fa-lg social"></i>
+        </a>
+      </div>
+      <p>Made by BME, ©2021</p>
+    </footer>
+    
+   </div>
+   
+    <script src="/js/script.js"></script>
+  </body>
+  
+</html>
