@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>  
+  <head>
+    <title>Brendan - Best Airbnbs in Paris</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content>
+    <meta name="author" content="Brendan Erhard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <!--[if IE]>
+      <style>
+        <link rel="stylesheet" type="text/css" href="css/ie9.css"/>
+      </style>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118173659-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118173659-1');
+    </script>
+    <!--favi-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!--font awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--my CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/ie10.css" type="text/css"> 
+    
+  </head>
+  
+  <body>
+   <div class="container">
+    <nav>
+      <a href="/html/index.html" id="branding">Brendan</a>
+      <a href="/html/about.html" >About</a>
+      <a href="/html/mystory.html">My Story</a> 
+      <a href="/html/work.html"class="active" >Work</a> 
+      <a href="/html/fun.html">When Not Working</a>  
+    </nav>
+ 
+
+    <h2>Intro</h2>
+    <p>“If you are lucky enough to have lived in Paris as a young man, then wherever you go for the rest of your life, it stays with you, for Paris is a moveable feast.” This was true for Ernest Hemingway, and it is certainly true for me. I studied abroad in Paris from February to June 2009 and it was a seminal point in my life - I fell in love with the city and the culture and grew tremendously as a person. I do agree with Audrey Hepburn that 'Paris est toujours une bonne idée' (Paris is always a good idea). Since my study abroad tour de force in 2009, I have been back to the city I love several times, each time staying in a different neighborhood to experience the city from a different perspective. </p>
+    <h2>Objective: Find the best Airbnb in Paris:</h2>
+    <p>I have always been fascinated by airbnb. This project aims to use pandas and machine learning to explore Airbnb listing data, in order to find the top 5 Airbnb properties in Paris. The strategy needs to evolve around exploring the data, running regressions to figure out the importance of each variable in determnining price - and then filter based on conditions to find those units that are undervalued. </p>
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
+    <p></p>
+    
+   <h2>The dataset</h2>
+   <p>The datset used for this project comes from <a href="http://insideairbnb.com/get-the-data.html" >Insideairbnb.com</a>, which is actually an anti-Airbnb lobbying group that scrapes listings, reviews and calendar data for multiple cities around the world. The dataset that I used from the site was scraped on September 30, 2021.</p>
+   <br>
+   <figure>
+    <img src="/img/airbnb_python.png" srcset=""alt="airbnb-python">
+    <figcaption>Getting the data</figcaption>
+  </figure>
+   <figure>
+    <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
+  <h1>Cleaning and pre-processing</h1>
+  <p>The dataset does have some limitations and is quite extensive; to facilitate analysis I will start by importing necessary python packages and libraries, then cleaning the data.</p>
+  <h3>Importing the libraries and data</h3>
+  <figure>
+    <img src="/img/import_paris.png" srcset=""alt="import-paris">
+    <figcaption>Importing the file - which contains 50,133 AirBnb listings</figcaption>
+  </figure>
+  <h3>Dropping initial columns</h3>
+  <p>To simplify the dataset, I will drop columns that will not useful in predicting price. I also will check for missing data - and drop tbose columns that have a majority of data that is null.</p>
+  <figure>
+    <img src="/img/drop_initial.png" srcset=""alt="drop-initial">
+  </figure>
+  <figure>
+    <img src="/img/isna_sum.png" srcset=""alt="isna-sum">
+  </figure>
+  <p>Now check for the boolean and categorical data, to see if any of them are worth including:</p>
+  <figure>
+    <img src="/img/airbnb_hist.png" srcset=""alt="airbnb-hist">
+  </figure>
+  <p>From the above, it can be seen that several columns only contain one category and can be dropped.</p>
+  <h3>Description of each column:</h3>
+  <ul>
+    <li>host_since - date that the host first joined Airbnb</li>
+    <li>host_response_time - average amount of time the host takes to communicate</li>
+    <li>host_response_rate - proportion of messages that the host replies to</li>
+    <li>host_is_superhost - whether or not the host is a superhost, which is a mark of quality for the top-rated and most experienced hosts, and can increase your search ranking on Airbnb</li>
+    <li>property_type - type of property, e.g. house or flat</li>
+    <li>room_type - type of listing, e.g. entire home, private room or shared room</li>
+    <li>bathrooms - number of bathrooms</li>
+    <li>beds - number of beds</li>
+    <li>amenities - list of amenities</li>
+    <li> price - nightly advertised price</li>
+    <li>minimum_nights - the minimum length of stay</li>
+    <li>maximum_nights - the maximum length of stay</li>
+    <li>availability_30 - how many nights are available to be booked in the next 30 days</li>
+    <li>availability_60 - how many nights are available to be booked in the next 60 days</li>
+    <li>availability_90 - how many nights are available to be booked in the next 90 days</li>
+    <li>availability_365 - how many nights are available to be booked in the next 365 days</li>
+    <li>number_of_reviews - the number of reviews left for the property</li>
+    <li>number_of_reviews_ltm - the number of reviews left for the property in the last twelve months</li>
+    <li>first_review - the date of the first review</li>
+    <li>last_review - the date of the most recent review</li>
+    <li>review_scores_rating - guests can score properties overall from 1 to 5 stars</li>
+    <li>review_scores_accuracy - guests can score the accuracy of a property's description from 1 to 5 stars</li>
+    <li>review_scores_cleanliness - guests can score a property's cleanliness from 1 to 5 stars</li>
+    <li>review_scores_checkin - guests can score their check-in from 1 to 5 stars</li>
+    <li>review_scores_communication - guests can score a host's communication from 1 to 5 stars</li>
+    <li>review_scores_location - guests can score a property's location from 1 to 5 stars</li>
+    <li>review_scores_value - guests can score a booking's value for money from 1 to 5 stars</li>
+    <li>reviews_per_month - calculated field of the average number of reviews left by guest each month</li>
+  </ul>
+
+  <h3>Cleaning individual columns</h3>
+  <p>Working with</p>
+  <figure>
+    <img src="/img/host_response_time.png" srcset=""alt="host-response-time">
+  </figure>
+  <figure>
+    <img src="/img/host_response_time_plot.png" srcset=""alt="host-response-time-plot">
+  </figure>
+  <p>Observations:</p>
+  <figure>
+    <img src="/img/host_response_rate.png" srcset=""alt="host-response-rate">
+  </figure>
+  <figure>
+    <img src="/img/host_response_bins.png" srcset=""alt="host-response-bins">
+  </figure>
+  <figure>
+    <img src="/img/host_response_rate_plot.png" srcset=""alt="host-response-rate-plot">
+  </figure>
+  <p>Observations:</p>
+  <figure>
+    <img src="/img/property_type.png" srcset=""alt="property-type">
+  </figure>
+  <figure>
+    <img src="/img/property_type_replace.png" srcset=""alt="property-type-replace">
+  </figure>
+  <figure>
+    <img src="/img/property_type_plot.png" srcset=""alt="property-type-plot">
+  </figure>
+  <p>Observations:</p>
+  <figure>
+    <img src="/img/amenities.png" srcset=""alt="amenities">
+  </figure>
+  <p>Observations:</p>
+  <figure>
+    <img src="/img/amenities_drop.png" srcset=""alt="amenities-drop">
+  </figure>
+  <p>Observations:</p>
+  <figure>
+    <img src="/img/price_airbnb.png" srcset=""alt="price-airbnb">
+  </figure>
+  <p>Observations:</p>
+  <figure>
+    <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
+  <h1>Exploratory data analysis</h1>
+  <figure>
+    <img src="/img/airbnb_first_host_date.png" srcset=""alt="airbnb-first-host-date">
+  </figure>
+  <p>Observations:</p>
+
+  <h4>Time Series</h4>
+  <figure>
+    <img src="/img/airbnb_timeseries1.png" srcset=""alt="airbnb-time-series-1">
+  </figure>
+  <p>Observations:</p>
+  <figure>
+    <img src="/img/airbnb_time_series2.png" srcset=""alt="airbnb-time-series-2">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_price_yoy.png" srcset=""alt="airbnb-price-yoy">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_price_sheet.png" srcset=""alt="airbnb-price-sheet">
+  </figure>
+  
+
+  <h4>Numerical features</h4>
+  <figure>
+    <img src="/img/airbnb_describe.png" srcset=""alt="airbnb-describe">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_price_distribution.png" srcset=""alt="airbnb-distribution">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_price_distribution2.png" srcset=""alt="airbnb-distribution2">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_price_accommodations.png" srcset=""alt="airbnb-price_accommodations">
+  </figure>
+  
+  <h4>Categorical features</h4>
+  <figure>
+    <img src="/img/airbnb_pearson_code.png" srcset=""alt="airbnb-pearson-code">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_pearson_plot_code.png" srcset=""alt="airbnb-pearson-plot-code">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_feature_correlation.png" srcset=""alt="airbnb-coffee-correlation-code">
+  </figure>
+  <h4>Boolean features</h4>
+  <figure>
+    <img src="/img/airbnb_coffee_nachine_correlation_code.png" srcset=""alt="airbnb-coffee-machine-correlation">
+  </figure>
+  <figure>
+    <img src="/img/airbnb_coffee_correlation.png" srcset=""alt="airbnb-coffee-correlation">
+  </figure>
+  <figure>
+    <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
+  <h2>Preparing the data for modeling</h2>
+
+    <footer>
+      <hr/>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/brendan-erhard/" target="_blank">
+          <i title="linkedin" class="fab fa-linkedin-in fa-lg social"></i>
+        </a>
+        <a href="mailto:erhardbr@gmail.com" target="_top">
+          <i title="email" class="far fa-envelope fa-lg social"></i>
+        </a>
+        <a href="https://twitter.com/bme3414" target="_top">
+          <i title="twitter" class="fab fa-twitter fa-lg social"></i>
+        </a>
+        <a href="https://github.com/bme3412" target="_blank">
+          <i title="github" class="fab fa-github fa-lg social"></i>
+        </a>
+      </div>
+      <p>Made by BME, ©2021</p>
+    </footer>
+    
+   </div>
+   
+    <script src="/js/script.js"></script>
+  </body>
+  
+</html>

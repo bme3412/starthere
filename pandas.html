@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>  
   <head>
-    <title>Brendan - How I got here</title>
+    <title>Brendan - Pandas/Data Analysis Tips and Tricks</title>
     <meta charset="utf-8">
     <meta name="keywords" content>
     <meta name="author" content="Brendan Erhard">
@@ -49,47 +49,80 @@
     <nav>
         <a href="/html/index.html" id="branding">Brendan</a>
         <a href="/html/about.html" >About</a>
-        <a href="/html/mystory.html"class="active">My Story</a> 
-        <a href="/html/work.html" >Work</a> 
+        <a href="/html/mystory.html">My Story</a> 
+        <a href="/html/work.html"class="active" >Work</a> 
         <a href="/html/fun.html">When Not Working</a>   
     </nav>
     
     <h1>Pandas</h1>
     <h4>Loading files and changing display options</h4>
-    <p></p>
+    <p>The below code uses pandas to read in data from a csv file, then prints an f-string that summarizes the size of the loaded-in DataFrame. Then I change the viewing options to show a minimum of 20 rows, a max of 100 rows, and the # of visible columns is set to the # of total columns in the dataset.</p>
     <figure>
         <img src="/img/load_csv.png" srcset=""alt="load-csv">
         <figcaption>Using pandas to read in a csv file of IMDB movie data and changing view options</figcaption>
       </figure>
-    <hr class="dashed">
-    <h4>Identifying and dropping null values</h4>
-    <p></p>
+      <figure>
+        <img src="/img/break5.png" srcset=""alt="break">
+    </figure>
+
+    <h4>The excellent pandas_profiling package can be used to create a profile report for a given DataFrame in html format </h4>
+    <p><a href="/html/titanic_profile_report.html" target="_blank" >Click here</a> for a sample profile report from the popular titanic survivors dataset. The report succintly summarizes the data set and serves as a great starting point for analysis of any large datasets. The example below categorizes the data by variable type but there is so much more in the report.  </p>
+    <figure>
+      <img src="/img/titanic_profile.png" srcset=""alt="titanic_profile">
+    </figure>
+    <br>
+    <h4>Identifying and examining missing values and dropping null values</h4>
+    <p>The below code counts/sums the total # of missing values by variable.</p>
     <figure>
       <img src="/img/null_sum.png" srcset=""alt="null-sum">
       <figcaption>Identifying and counting all n/a values by feature</figcaption>
     </figure>
     <figure>
+      <img src="/img/missing_perc.png" srcset=""alt="missing-%">
+    </figure>
+
+    <figure>
+      <img src="/img/missing_data.png" srcset=""alt="drop_na">
+      <figcaption>Visualizing patterns in missing data</figcaption>
+    </figure>
+    <figure>
       <img src="/img/drop_na.png" srcset=""alt="drop_na">
       <figcaption>Dropping nulls based on conditional null values</figcaption>
     </figure>
-    <hr class="dashed">
-    <br><h4>Formatting integers/floats in DataFrames through method-chaining</h4>
-    <p></p>
-    <hr class="dashed">
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
+
+  
     <br><h4>Using a for loop to fill null values with the median values</h4>
     <p></p>
     <figure>
       <img src="/img/null_for_loop.png" srcset=""alt="null-forloop">
       <figcaption>Replacing null values with median values</figcaption>
     </figure>
-    <hr class="dashed">
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
+    <br><h4>Formatting integers/floats in DataFrames through method-chaining</h4>
+    <p></p>
+    <figure>
+      <img src="/img/negative_red.png" srcset=""alt="negative-red">
+      <figcaption>Using styling formatting to change negative values to red</figcaption>
+    </figure>
+
+    <p></p>
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
     <br><h4>Q Cut and percentiles/quantiles</h4>
     <p></p>
     <figure>
       <img src="#" srcset=""alt="qcut">
       <figcaption>using q cut for percentiles</figcaption>
     </figure>
-    <hr class="dashed">
+    <figure>
+      <img src="/img/break5.png" srcset=""alt="break">
+  </figure>
     <br><h4>Filtering DataFrames based on multiple conditions</h4>
     <p></p>
     <figure>

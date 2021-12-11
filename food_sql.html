@@ -1,0 +1,110 @@
+
+
+<!DOCTYPE html>
+<html>  
+  <head>
+    <title>Brendan - Pandas/Data Analysis Tips and Tricks</title>
+    <meta charset="utf-8">
+    <meta name="keywords" content>
+    <meta name="author" content="Brendan Erhard">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--IE-->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9">
+    <!--[if IE]>
+      <style>
+        <link rel="stylesheet" type="text/css" href="css/ie9.css"/>
+      </style>
+    <![endif]-->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-118173659-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-118173659-1');
+    </script>
+    <!--favi-->
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#2b5797">
+    <meta name="theme-color" content="#ffffff">
+    <!--font awesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <!--my CSS-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css" type="text/css">
+    <link rel="stylesheet" href="/css/main.css" type="text/css">
+    <link rel="stylesheet" href="/css/ie10.css" type="text/css"> 
+    
+  </head>
+  
+  <body>
+   <div class="container">
+    <nav>
+        <a href="/html/index.html" id="branding">Brendan</a>
+        <a href="/html/about.html" >About</a>
+        <a href="/html/mystory.html">My Story</a> 
+        <a href="/html/work.html"class="active" >Work</a> 
+        <a href="/html/fun.html">When Not Working</a>   
+    </nav>
+    
+    <h1>My post-Turkey day taper</h1>  
+    <h3>Tracking calories and shedding pounds with the help of MySQL</h3>
+    <p>December 31, 2021</p>
+    <p>I stepped on the scale a few days after Thanksgiving and saw a number I really did not like (if there was a betting line, take the over). So in order to improve my diet I used the nutrition app MyFitnessPal and MySQL to create a database to track all the meals I ate in the month of December. I also tracked all my exercise and weighed myself each day. <br> 
+    <br>
+    To start my journey to becoming healthier, and as a believer in science, first I consulted some nutrition calculators online for a desired daily calorie and nutrient goal. Ultimately, to reach my desired weight loss target of 30 lbs, I need to consume a total of 1,910 (net) calories per day, with my "macro" targets in a split of 50% carbohydrates (translates to 239 g), 30% fat (64 g), and 20% protein (96g).</p>
+    <div class="row">
+      <div class="column">
+        <img src="/img/macros.png" alt="macros" style="width:100%">
+      </div>
+      <div class="column">
+        <img src="/img/micros.png" alt="micros" style="width:100%">
+      </div>
+    </div>
+    <br>  
+    <p>For exercise, my target was to burn 1,890 calories throguh either 4 workouts per week or 4 hours of exercise total. My targets for micro-nutrients included: 21g saturated fat, 300 mg cholestorel, 2300 mg sodium, 3500 mg potassium, 38 g of fiber, 72g sugar, and 100% sugggested daily value consumption of Vitamin A, Vitamin C, calcium, and iron. </p>
+    <figure>
+      <img src="/img/create_table.png" srcset=""alt="create-table">
+      <figcaption>Creating the database and the first table</figcaption>
+    </figure>
+    <p></p>
+    <figure>
+      <img src="/img/insert_values.png" srcset=""alt="insert-values">
+      <figcaption>Inserting values into the 'food_database' table</figcaption>
+    </figure>
+    <figure>
+      <img src="/img/SQL_meal_1130.png" srcset=""alt="SQL-meal">
+    </figure>
+    <h1>Time Series Analysis - I am forecast to weigh x lbs on x date</h1>
+    
+    <footer>
+      <hr/>
+      <div class="contact">
+        <a href="https://www.linkedin.com/in/brendan-erhard/" target="_blank">
+          <i title="linkedin" class="fab fa-linkedin-in fa-lg social"></i>
+        </a>
+        <a href="mailto:erhardbr@gmail.com" target="_top">
+          <i title="email" class="far fa-envelope fa-lg social"></i>
+        </a>
+        <a href="https://twitter.com/bme3414" target="_top">
+          <i title="twitter" class="fab fa-twitter fa-lg social"></i>
+        </a>
+        <a href="https://github.com/bme3412" target="_blank">
+          <i title="github" class="fab fa-github fa-lg social"></i>
+        </a>
+      <p>Made by BME, ©2021</p>
+    </footer>
+    
+   </div>
+   
+    <script src="/js/script.js"></script>
+  </body>
+  
+</html>
