@@ -174,3 +174,9 @@ input {
 hr.dashed {
   border-top: 3px dashed #bbb;
 }
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
